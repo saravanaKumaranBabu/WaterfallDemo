@@ -1,0 +1,35 @@
+{
+    "id": 0,
+    "summaryTargetCarry": "Max / $ ---",
+    "summaryTargetNetting": "",
+    "summaryTargetExpenseGiveback": "",
+    "carryTargetCarry": true,
+    "carryTargetCarryAmt": "",
+    "nettingPortfolioTargetAmt": "",
+    "nettingTargetPercent": "",
+    "nettingSumTarget": "$ 3,711,885.00",
+    "nettingTable": [
+        {
+            "deal": "Inv A",
+            "tranche": "Inv A-T1",
+            "remainingLoss": 3711885.00,
+            "targetAmt": 11885.00,
+            "targetPercentage": 1.15
+        },
+        {
+            "deal": "Inv A",
+            "tranche": "Inv A-T1",
+            "remainingLoss": 3711885.00,
+            "targetAmt": 11885.00,
+            "targetPercentage": 1.15
+        },
+        {
+            "deal": "Inv A",
+            "tranche": "Inv A-T1",
+            "remainingLoss": 3711885.00,
+            "targetAmt": 11885.00,
+            "targetPercentage": 1.15
+        }
+    ],
+    "expenseGivebackSumTotal": "$ 37,11,885.00"
+}

@@ -1,0 +1,26 @@
+[
+    {
+        "0": [{
+            "event": "Investment",
+            "date": "2022-09-01",
+            "amount": "3000"
+        }],
+        "name": "Scenario 1",
+        "date": "09/01/2022",
+        "event": "Distribution",
+        "deal": "Focus",
+        "id": 1
+    },
+    {
+        "0": [{
+            "event": "Investment",
+            "date": "2022-09-01",
+            "amount": "3000"
+        }],
+        "name": "Scenario 2",
+        "date": "09/01/2022",
+        "event": "Management Fee",
+        "deal": "Focus",
+        "id": 1
+    }
+]

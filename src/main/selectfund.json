@@ -1,0 +1,22 @@
+[
+    {
+        "id" : 1,
+        "text" : "Fund-1"
+    },
+    {
+        "id" : 2,
+        "text" : "Fund-2"
+    },
+    {
+        "id" : 3,
+        "text" : "Fund-3"
+    },
+    {
+        "id" : 4,
+        "text" : "Fund-4"
+    },
+    {
+        "id" : 5,
+        "text" : "Fund-5"
+    }
+]
