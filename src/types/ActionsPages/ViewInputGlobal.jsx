@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
 import {
     Paper, Table, TableBody, TableCell, TableContainer,
     TableHead, TableRow,
 } from '@mui/material';
-import { useLocation } from 'react-router-dom';
 import NumberFormat from 'react-number-format';
 
 import { useFetchTenaskaSaleViewInput } from "../../Hooks/FundHooks";
@@ -25,56 +23,70 @@ const ViewInputGlobal = (props) => {
                                 <TableRow >
                                 <TableCell
                                         style={{
-                                            fontFamily: 'Roboto',
+                                            fontFamily: 'Helvetica',
                                             fontStyle: 'normal',
-                                            fontWeight: '600',
-                                            fontSize: '14px',
-                                            lineHeight: '20px',
+                                            fontWeight: '700',
+                                            fontSize: '12px',
+                                            lineHeight: '24px',
                                             color: '#08121B',
-                                            borderRight: '1px solid #FFFFFF',
+                                            borderRight: '1px solid rgba(240, 242, 244, 1)',
                                             textAlign: 'left',
-                                            width: '101px'
+                                            width: '106px'
                                         }}
                                     >Investor Id</TableCell> 
                                     <TableCell
                                         style={{
-                                            fontFamily: 'Roboto',
+                                            fontFamily: 'Helvetica',
                                             fontStyle: 'normal',
-                                            fontWeight: '600',
-                                            fontSize: '14px',
-                                            lineHeight: '20px',
+                                            fontWeight: '700',
+                                            fontSize: '12px',
+                                            lineHeight: '24px',
                                             color: '#08121B',
-                                            borderRight: '1px solid #FFFFFF',
+                                            borderRight: '1px solid rgba(240, 242, 244, 1)',
                                             textAlign: 'left',
-                                            width: '101px'
+                                            width: '185px'
                                         }}
                                     >Investor</TableCell>
                                     <TableCell
                                         style={{
-                                            fontFamily: 'Roboto',
+                                            fontFamily: 'Helvetica',
                                             fontStyle: 'normal',
-                                            fontWeight: '600',
-                                            fontSize: '14px',
-                                            lineHeight: '20px',
+                                            fontWeight: '700',
+                                            fontSize: '12px',
+                                            lineHeight: '24px',
                                             color: '#08121B',
-                                            borderRight: '1px solid #FFFFFF',
-                                            textAlign: 'right',
-                                            width: '101px'
+                                            borderRight: '1px solid rgba(240, 242, 244, 1)',
+                                            textAlign: 'center',
+                                            width: '110px',
+                                            padding:'0px'
                                         }}
                                     >Gross Proceeds</TableCell>                                   
                                     <TableCell
                                         style={{
-                                            fontFamily: 'Roboto',
+                                            fontFamily: 'Helvetica',
                                             fontStyle: 'normal',
-                                            fontWeight: '600',
-                                            fontSize: '14px',
-                                            lineHeight: '20px',
+                                            fontWeight: '700',
+                                            fontSize: '12px',
+                                            lineHeight: '24px',
                                             color: '#08121B',
-                                            borderRight: '1px solid #FFFFFF',
-                                            textAlign: 'right',
-                                            width: '101px'
+                                            borderRight: '1px solid rgba(240, 242, 244, 1)',
+                                            textAlign: 'center',
+                                            width: '115px',
+                                            padding:'0px'
                                         }}
-                                    >Gross Capital Gain</TableCell>  
+                                        >Gross Capital Gain</TableCell>  
+                                    <TableCell
+                                        style={{
+                                            fontFamily: 'Helvetica',
+                                            fontStyle: 'normal',
+                                            fontWeight: '700',
+                                            fontSize: '12px',
+                                            lineHeight: '24px',
+                                            color: 'red',
+                                            borderRight: 'none',
+                                            textAlign: 'center',
+                                            width: 'auto'
+                                        }}> </TableCell>  
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -87,16 +99,16 @@ const ViewInputGlobal = (props) => {
                       key={'dashbd-'+index+'-'+row.investorId}
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }} >      
                       <TableCell 
-                        style={{ fontWeight: '500', fontSize: '14px', lineHeight: '24px', textAlign: 'left' }}>{row.investorId} </TableCell>
-                      <TableCell style={{ textAlign: 'left', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                        style={{ fontWeight: '500', fontSize: '12px', lineHeight: '24px', textAlign: 'left' , margin: '0px', padding: '0px 8px',borderRight: '1px solid rgba(240, 242, 244, 1)'}}>{row.investorId} </TableCell>
+                      <TableCell style={{ textAlign: 'left', fontWeight: '500', fontSize: '12px', lineHeight: '24px' , margin: '0px', padding: '0px 8px', borderRight: '1px solid rgba(240, 242, 244, 1)'}}>
                         {row.tfinvestor|| ''}</TableCell>
-                      <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                      <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px' , margin: '0px', padding: '0px 8px',borderRight: '1px solid rgba(240, 242, 244, 1)',textAlign: 'center'}}>
                       <NumberFormat
                                                     value={row.grossProceeds}
                                                     displayType={"text"}
                                                     thousandSeparator={true}
                                                     prefix={"$"} /></TableCell>
-                        <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                        <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px' , margin: '0px', padding: '0px 8px',borderRight: '1px solid rgba(240, 242, 244, 1)',textAlign: 'center'}}>
                         <NumberFormat
                                                     value={row.grossCapitalGain}
                                                     displayType={"text"}

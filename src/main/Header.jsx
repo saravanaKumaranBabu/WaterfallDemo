@@ -14,21 +14,21 @@ import contactSupport from "./Images/contact-support.png";
 //import type { RootState } from './store'
 import squareList from "../main/Images/square-list.svg";
 //import circleDollar from "../main/Images/circle-dollar.svg";
-import chevronRight from "../main/Images/Chevron-right.svg";
 import { Link, useLocation } from 'react-router-dom';
+import chevronRight from "../main/Images/Chevron-right.svg";
 // import IconNotification from "../main/Images/Icn_Notification.svg";
-import { ReactComponent as IconNotiComp } from "../main/Images/Icn_Notification.svg";
-import { ReactComponent as IconGearComp } from "../main/Images/Gear20.svg";
-import { ReactComponent as IconLogoutComp } from "../main/Images/Logout.svg";
-import { ReactComponent as DashboardComp } from "../main/Images/DashboardIconCombo.svg";
-import { ReactComponent as FundSetupComp } from "../main/Images/fundSetupIcon.svg";
-import { ReactComponent as ReportsIconComp } from "../main/Images/Reports-icon.svg";
-import { ReactComponent as EventsIconComp } from "./Images/Calendar-check.svg";
-import { ReactComponent as SquareListComp } from "../main/Images/square-list.svg";
-import { ReactComponent as AboutIconComp } from "../main/Images/AboutIcon.svg";
-import { Col, Container, NavDropdown, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { ReactComponent as IconNotiComp } from "../main/Images/BellNotification.svg";
+import { ReactComponent as DashboardComp } from "../main/Images/DashboardIconCombo.svg";
+import { ReactComponent as FundSetupComp } from "../main/Images/fundSetupIcon.svg";
+import { ReactComponent as IconGearComp } from "../main/Images/Gear20.svg";
+import { ReactComponent as ReportsIconComp } from "../main/Images/Reports-icon.svg";
+import { ReactComponent as IconLogoutComp } from "../main/Images/UserLogout.svg";
+import { ReactComponent as Avatar } from "./Images/Avatar.svg";
+import { ReactComponent as EventsIconComp } from "./Images/Calendar-check.svg";
+import { ReactComponent as ChevronDown } from "./Images/GreyChevronDown.svg";
 
 const Header = (props) => {
   let location = useLocation();
@@ -61,7 +61,7 @@ const Header = (props) => {
         <Navbar collapseOnSelect expand="lg" bg="" variant="dark" className='ThoughtFocus-header-nav-bar'>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Brand as={Link} to={"/home"}>
-            <img src={ThoughtFocusLogo} alt="ThoughtFocus-logo" style={{ width: '90%',height: '90%' }} />
+            <img src={ThoughtFocusLogo} alt="ThoughtFocus-logo" style={{ width: '71%' }} />
           </Navbar.Brand>
           {
             window.location.pathname === '/' &&
@@ -70,147 +70,26 @@ const Header = (props) => {
             </Nav.Item>
           }
           {window.location.pathname !== "/" && <>
-            <Navbar.Collapse className='header-collapse-menu' id="responsive-navbar-nav">
-              <Nav className="me-auto header-menu1">
-                <Nav.Link id='dashboardMenuLink' as={Link} to={"/home"} href="/home" state={{ path: 'dashboard' }} className="menu-link">
-                  <span className={location?.state?.path === 'dashboard' ? 'active header-menu' : 'header-menu'}>
-                    {/* data-bs-toggle="collapse" data-bs-target=".navbar-collapse"> */}
-                    <span id='dashboardMenuIconTxt'>
-                      <DashboardComp alt="dashboard" className='menu-icon'/>
-                      &nbsp;Dashboard&nbsp;
-                    </span>
-                      {/* <i className="fa fa-big fa-angle-down d-none d-sm-inline-block" aria-hidden="true"></i> */}
-                    <span className="sr-only">(current)</span>
-                  </span>
-                </Nav.Link>
-                <Nav.Link id='fundSetupMenuLink' as={Link} to={"/FundSetup"} href="/FundSetup" state={{ path: 'fundSetup' }} className="menu-link">
-                  <span className={location.state?.path === 'fundSetup' ? 'active header-menu' : 'header-menu'}>
-                    <span id='fundSetupMenuIconTxt'>
-                      <FundSetupComp alt="FundSetup" className="menu-icon fundsetup-icon" />
-                      &nbsp;Fund Setup&nbsp;
-                    </span>
-                    <i className="fa fa-big fa-angle-down" aria-hidden="true"></i>
-                  </span>
-                </Nav.Link>
-                <Nav.Link id='reportsMenuLink' as={Link} to={"/home"} href="/home" state={{ path: 'report' }} className="menu-link">
-                  <span className={location?.state?.path === 'report' ? 'active header-menu' : 'header-menu'}>
-                    <span id='reportsMenuIconTxt'>
-                      <ReportsIconComp alt="reports" className='menu-icon' />
-                      &nbsp;Reports&nbsp;
-                    </span>
-                    <i className="fa fa-big fa-angle-down" aria-hidden="true"></i>
-                  </span>
-                </Nav.Link>
-                <Nav.Link id='eventsMenuLink' className='events-menu menu-link' onClick={onEventsMenuClick}>
-                  <span className={location?.state?.path === 'event' ? 'nav-item dropdown event-div active' : 'nav-item dropdown event-div'}>
-                    <span id='eventsMenuIconTxt'>
-                      <EventsIconComp alt="reports" className='menu-icon' />
-                      &nbsp;Events&nbsp;
-                    </span>
-                    <i className="fa fa-big fa-angle-down" aria-hidden="true"></i>
-                  </span>
-
-                  <ul onClick={(e) => e.stopPropagation()}
-                    style={{ position: 'absolute', top: '52px', left: '-150px' }}
-                    className={`dropdown-menu ${dropdown ? 'show' : ''}`}>
-                    <div className="event-submenu-backdrop">
-                      <li id='eventsSubMenuLink' className="event-menu-heading event-hover-li" style={{ width: '50%' }}>Events</li>
-                      <li className="dropdown-submenu event-hover-li " onClick={toggleOpen2} 
-                        style={{ width: '49%', padding: '15px 16px' }}>
-                        <a id='scenarioSubMenuLink' className=" event-menu-li dropdown-item event-dropdown"
-                          style={{ /*width: '320px',*/ height: 'auto', color: '#64b54d', fontWeight: '500', padding: '0px', background: 'none' }}>
-                          <img src={squareList} alt="list" />&nbsp;Scenario
-                          <img src={chevronRight} alt="chevron" style={{ float: 'right' }} />
-                        </a>
-                        <ul style={{ border: 'none', width: '50%', left: '50%', top: '53px' }}
-                          className={`dropdown-menu move-submenu ${dropdown2 ? 'show' : ''}`}>
-                          <li className='event-hover-li' onClick={(e) => {
-                            // e.preventDefault();
-                            props.setCurrentRoute('Gradual Fund Close')
-                          }}>
-                            <Link id='gradualFundCloseSubMenuLink' className=" event-menu-li dropdown-item event-dropdown event-hover-link" onClick={toggleOpen}
-                              to={"/actionpage/scenarioWizard"} state={{ path: 'event', event: 'Gradual Fund Close', active: 'viewInput' }}
-                              style={{ fontWeight: '500', color: '#64b54d', padding: '15px' }}>Gradual Fund Close
-                            </Link>
-                          </li>
-                          <li className='event-hover-li'>
-                            <Link id='totalLossSubMenuLink' className=" event-menu-li dropdown-item event-dropdown" onClick={toggleOpen}
-                              to={"/actionpage/viewInput"} state={{ path: 'event', event: 'Total Loss', active: 'viewInput' }}
-                              style={{ fontWeight: '500', color: '#64b54d', padding: '15px' }}>Total Loss
-                            </Link>
-                          </li>
-                          <li className='event-hover-li'>
-                            <Link id='atCostSubMenuLink' className=" event-menu-li dropdown-item event-dropdown" onClick={toggleOpen}
-                              to={"/actionpage/viewInput"} state={{ path: 'event', event: 'At Cost', active: 'viewInput' }}
-                              style={{ fontWeight: '500', color: '#64b54d', padding: '15px' }}>At Cost
-                            </Link>
-                          </li>
-                        </ul>
-                      </li>
-                    </div>
-                  </ul>
-                </Nav.Link>
-                {/* <EventsIconComp alt="reports" className='menu-icon' /> */}
-                <NavDropdown id="collasible-nav-dropdown" prefix='' className='header-dropdown menu-icon dropleft'
-                  title={
-                    <span id='eventTxt' className='header-menu'>
-                      <span><EventsIconComp alt="reports" />&nbsp;Events&nbsp;</span>
-                      <i className="fa fa-big fa-angle-down" aria-hidden="true"></i>
-                      <i className="fa fa-big fa-angle-up" aria-hidden="true"></i>
-                    </span>}>
-                  {/* <NavDropdown.Item href="#action/3.1">Events</NavDropdown.Item> */}
-                  <NavDropdown id="collasible-nav-dropdown1" className='header-sub-dropdown'
-                    title={
-                      <span id='scenarioTxt' className='header-menu'>
-                        <span><SquareListComp alt="reports" />&nbsp;Scenario&nbsp;</span>
-                        <i className="fa fa-big fa-angle-down" aria-hidden="true"></i>
-                        <i className="fa fa-big fa-angle-up" aria-hidden="true"></i>
-                      </span>}>
-                    <NavDropdown.Divider className='d-sm-none' />
-                    <NavDropdown.Item as={Link} to={"/actionpage/scenarioWizard"} href="/actionpage/scenarioWizard" className='header-menu'
-                      state={{ path: 'event', event: 'Gradual Fund Close', active: 'viewInput' }}>Gradual Fund Close</NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item as={Link} to={"/actionpage/viewInput"} href="/actionpage/viewInput" className='header-menu'
-                      state={{ path: 'event', event: 'Total Loss', active: 'viewInput' }}>Total Loss</NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item as={Link} to={"/actionpage/viewInput"} href="/actionpage/viewInput" className='header-menu'
-                      state={{ path: 'event', event: 'At Cost', active: 'viewInput' }}>At Cost</NavDropdown.Item>
-                  </NavDropdown>
-
-                </NavDropdown>
-
-                <Nav.Link id='aboutMenuLink' as={Link} to={"/about"} href="/about" state={{ path: 'about' }} className="menu-link">
-                  <span className={location.state?.path === 'about' ? 'active header-menu' : 'header-menu'}>
-                    <span id='aboutMenuIconTxt'>
-                      <AboutIconComp alt="about" className="menu-icon" />
-                      &nbsp;About&nbsp;
-                    </span>
-                    {/* <i className="fa fa-big fa-angle-down" aria-hidden="true"></i> */}
-                  </span>
-                </Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-
             <Nav className='header-menu2 ms-auto'>
-              <Nav.Link id='notifnMenuLink' as={Link} to={"/home"} style={{ color: '#FFFFFF' }}>
-                <IconNotiComp alt="bell" className="notifnComp" />
-              </Nav.Link>
+                <Nav.Link className='bell-notification' id='notifnMenuLink' as={Link} to={"/home"}>
+                  <IconNotiComp alt="bell" className="notifnComp" />
+                </Nav.Link>
 
-              <div className="header-vl" style={{ height: '25px', position: 'static', alignSelf: 'center' }}></div>
+              {/* <div className="header-vl" style={{ height: '25px', position: 'static', alignSelf: 'center' }}></div>
 
               <Nav.Link id='settingsMenuLink' as={Link} to={'/home'} style={{ color: '#FFF' }}>
                 <IconGearComp alt='gear' className='gearComp' />
-              </Nav.Link>
+              </Nav.Link> */}
 
-              <div className="header-user" style={{ width: '37px', height: '40px', position: 'static', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <a id='userInitialsMenuLink' as={Link} to="/home" className="header-user-initial" style={{ position: 'static' }}>
-                  {props.userInitial ? props.userInitial : "WJ"}
+              <div className="header-user header-user-menu" >
+                <a id='userInitialsMenuLink' as={Link} to="/home" className="header-user-icon" style={{ position: 'static' }}>
+                  <span><Avatar alt='avatar' className='avatarComp'/></span>
                 </a>
+                  <span id='userNameMenuLink' className="header-user-name" style={{ position: 'static' }}>
+                    {props.userName ? props.userName : "William Jacobson"}
+                  </span>
+                  <span><ChevronDown alt='chevronDown' className='chevronDownComp'/></span>
               </div>
-
-              <span id='userNameMenuLink' className="header-user-name" style={{ position: 'static' }}>
-                {props.userName ? props.userName : "William Jacobson"}
-              </span>
 
               <Nav.Link id='logoutMenuLink' className="nav-link header-logout-icon" as={Link} to={"/"} onClick={() => localStorage.removeItem('loggedInUser')}>
                 <IconLogoutComp alt="logout" className='logoutComp' />

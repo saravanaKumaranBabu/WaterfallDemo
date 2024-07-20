@@ -44,7 +44,7 @@ h3 {
   box-sizing: border-box;
   margin-bottom: 10px;
   padding: 0px 40px;
-  background: #FAFBFF;
+  background: rgba(255,255,255,1);
   mix-blend-mode: normal;
   border-left: none;
   border-right: none;
@@ -85,7 +85,7 @@ h3 {
   padding-right : 0px;
   padding-top:20px;
   box-sizing: border-box;
-  background-color: #FFFFFF;
+  background: rgba(247, 248, 253, 1);
   border: 1px solid #E7E8FC;
   /* height: 109px;
   width: 150px; */

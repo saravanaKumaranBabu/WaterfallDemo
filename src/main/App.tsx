@@ -1,33 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import Header from './Header'
-import Footer from './Footer'
-import './App.css';
-import WaterFallOutputPage from '../types/WaterFallOutputPage';
+import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Dashboard from './Dashboard';
-import ViewScenarioData from '../types/ViewScenarioData';
-import ScenarioAdd from '../types/ScenarioAdd';
-import PeriodClose from "../types/EventsMenu/PeriodClose";
-import Distribution from "../types/EventsMenu/Distribution";
-import SimulateFundClose from "../types/EventsMenu/SimulateFundClose";
-import DoomsdayScenario from "../types/EventsMenu/DoomsdayScenario";
-import IncomeDistribution from "../types/IncomeDistribution";
-import LoginMobile from "../types/LoginMobile";
 import ActionsPage from '../types/ActionsPage';
-import ScenarioWizard from '../types/ScenarioWizard';
-import FundSetup from "../types/FundSetup";
-import ViewInput from '../types/ActionsPages/ViewInput';
-import ViewInputGlobal from '../types/ActionsPages/ViewInputGlobal';
-import ViewInputCarry from '../types/ActionsPages/ViewInputCarry';
-import SetOptions from '../types/ActionsPages/SetOptions';
+import Approval from '../types/ActionsPages/Approval';
 import RunWaterfall from '../types/ActionsPages/RunWaterfall';
+import SetOptions from '../types/ActionsPages/SetOptions';
+import ViewInput from '../types/ActionsPages/ViewInput';
+import ViewInputCarry from '../types/ActionsPages/ViewInputCarry';
+import ViewInputGlobal from '../types/ActionsPages/ViewInputGlobal';
 import ViewOutput from '../types/ActionsPages/ViewOutput';
 import ViewOutputGlobal from '../types/ActionsPages/ViewOutputGlobal';
-import Approval from '../types/ActionsPages/Approval';
+import Distribution from "../types/EventsMenu/Distribution";
+import DoomsdayScenario from "../types/EventsMenu/DoomsdayScenario";
+import PeriodClose from "../types/EventsMenu/PeriodClose";
+import SimulateFundClose from "../types/EventsMenu/SimulateFundClose";
+import FundSetup from "../types/FundSetup";
+import IncomeDistribution from "../types/IncomeDistribution";
+import LoginMobile from "../types/LoginMobile";
+import ScenarioAdd from '../types/ScenarioAdd';
+import ScenarioWizard from '../types/ScenarioWizard';
+import ViewScenarioData from '../types/ViewScenarioData';
+import WaterFallOutputPage from '../types/WaterFallOutputPage';
+import './App.css';
+import Dashboard from './Dashboard';
+import Footer from './Footer';
+import Header from './Header';
 // import SetOptionsWizard from '../types/SetOptionsWizard';
+import AboutPage from '../types/AboutPage';
 import PeriodCloseActions from "../types/ActionsPages/PeriodCloseActions";
 import PeriodCloseDrilldown from "../types/ActionsPages/PeriodCloseDrilldown";
-import AboutPage from '../types/AboutPage';
+import SideMenu from './SideMenu';
 
 let global_user_info = {
   global_name: '',
@@ -86,8 +87,9 @@ function App() {
           //    <a href="/">Login</a>
           // </p>
         }
-
+        
         <div style={{ marginTop: '63px', marginBottom: '40px', minHeight: 'calc(100vh - 103px)', display: 'flex' }}>
+        <SideMenu/>
           <Routes>
 
             <Route path="waterfall" element={<WaterFallOutputPage />} />

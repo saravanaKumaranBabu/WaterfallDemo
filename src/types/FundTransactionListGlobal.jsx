@@ -1,27 +1,25 @@
 import React, { useState } from "react"
 import { useNavigate } from 'react-router-dom'
-import { format } from 'date-fns'
-import NumberFormat from "react-number-format"
 import { useFetchFundTransactionsGlobal } from "../Hooks/FundHooks"
 
-import ExportToExcel from "../main/Images/exportExcelFileIcon.svg";
-import EyeIcon from "../main/Images/eye.svg";
-import viewInputIcon from "../main/Images/viewInputIcon.svg";
-import viewOutputIcon from "../main/Images/viewOutputIcon.svg";
-import Vector177 from "../main/Images/Vector 177.svg";
+import ExportToExcel from "../main/Images/exportExcelFileIcon.svg"
+import EyeIcon from "../main/Images/eye.svg"
+import Vector177 from "../main/Images/Vector 177.svg"
+import viewInputIcon from "../main/Images/viewInputIcon.svg"
+import viewOutputIcon from "../main/Images/viewOutputIcon.svg"
 
 
-import GearHollowIcon from "../main/Images/GearHollowIcon.svg";
+import GearHollowIcon from "../main/Images/GearHollowIcon.svg"
 
-import greenrightarrow from "../main/Images/greenRightArrowSolid.svg";
+import greenrightarrow from "../main/Images/greenRightArrowSolid.svg"
 
-import greenTickIcon from "../main/Images/greenTickIcon.svg";
+import greenTickIcon from "../main/Images/greenTickIcon.svg"
 
 
+import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, } from '@mui/material'
 import { Link } from "react-router-dom"
-import Popup from './Modal/Popup';
-import SetOptionsWizard from "./SetOptionsWizard";
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, } from '@mui/material';
+import Popup from './Modal/Popup'
+import SetOptionsWizard from "./SetOptionsWizard"
 
 import { OverlayTrigger, Tooltip } from "react-bootstrap"
 
@@ -51,35 +49,48 @@ const FundTransactionList = (props) => {
     {
       Header: 'Event ID',
       accessor: 'eventId',
-      headerAlign: 'center'
+      headerAlign: 'center',
+      width: '96px'
     }, {
       Header: 'GL Date',
       accessor: 'glDate',
-      headerAlign: 'center'
+      headerAlign: 'center',
+      width:'113px'
     }, {
       Header: 'Effective Date',
       accessor: 'effectiveDate',
-      headerAlign: 'center'
+      headerAlign: 'center',
+      width:'113px'
     }, {
       Header: 'Event',
       accessor: 'event',
-      headerAlign: 'center'
+      headerAlign: 'center',
+      width:'165px'
     }, {
       Header: 'Deal Family',
       accessor: 'dealFamily',
-      headerAlign: 'center'
+      headerAlign: 'center',
+      width:'330px'
     }, {
       Header: 'Amount',
       accessor: 'amount',
-      headerAlign: 'center'
+      headerAlign: 'center',
+      width:'110px'
     }, {
       Header: 'Batch Status',
       accessor: 'batchStatus',
-      headerAlign: 'left'
+      headerAlign: 'center',
+      width:'90px'
     }, {
       Header: 'WFE Status',
       accessor: 'wfeStatus',
-      headerAlign: 'left'
+      headerAlign: 'center',
+      width:'97px'
+    },{
+      Header: 'Actions',
+      accessor: 'Actions',
+      headerAlign: 'center',
+      width:'auto'
     }
   ];
 
@@ -99,7 +110,7 @@ const FundTransactionList = (props) => {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }} >
         <div>
           <span className="text-left" style={{
-            width: '110px', height: '23px', fontFamily: 'Roboto', fontStyle: 'normal',
+            width: '110px', height: '23px', fontFamily: 'Helvetica', fontStyle: 'normal',
             fontWeight: '700', fontSize: '20px', lineHeight: '23px', marginRight: '16px'
           }}>
             <b style={{ fontWeight: '700', }}>Fund Events</b>
@@ -149,7 +160,7 @@ const FundTransactionList = (props) => {
               <TableHead>
                 <TableRow>
                   {columns.map((headerGroup, i) => (
-                    <TableCell style={{ textAlign: headerGroup.headerAlign }} key={'dashbdHeader' + i}>
+                    <TableCell style={{ width: headerGroup.width ,textAlign: headerGroup.headerAlign , fontFamily:'Helvetica',fontSize:'12px' , fontWeight :700 ,whiteSpace:'nowrap'}} key={'dashbdHeader' + i}>
                       {/* {i == 0  ? <img src={headerStar} alt="header-star" style={{ paddingBottom : '3px'}}/> : */}
                       { headerGroup.Header }
                     </TableCell>
@@ -172,31 +183,31 @@ const FundTransactionList = (props) => {
                           <img src={star} alt="star" style={{ paddingBottom : '5px'}}/> 
                         </TableCell> */}
                       <TableCell onClick={() => { navigateToAction(row) }}
-                        style={{ height: '42px', textAlign: 'left', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>{row.eventId || ''}</TableCell>
+                        style={{ height: '24px', textAlign: 'left', fontWeight: '400', fontSize: '12px', lineHeight: '24px', margin: '0px', padding: '0px 8px',textAlign: 'center',borderRight: '1px solid rgba(240, 242, 244, 1)'}}>{row.eventId || ''}</TableCell>
                       <TableCell onClick={() => { navigateToAction(row) }}
-                        style={{ height: '42px', textAlign: 'center', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>{row.glDate || ''}</TableCell>
+                        style={{ height: '24px', textAlign: 'center', fontWeight: '400', fontSize: '12px', lineHeight: '24px', margin: '0px', padding: '0px 8px',textAlign: 'center',borderRight: '1px solid rgba(240, 242, 244, 1)'}}>{row.glDate || ''}</TableCell>
                          <TableCell onClick={() => { navigateToAction(row) }}
-                        style={{ height: '42px', textAlign: 'center', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>{row.effectiveDate || ''}</TableCell>
+                        style={{ height: '24px', textAlign: 'center', fontWeight: '400', fontSize: '12px', lineHeight: '24px', margin: '0px', padding: '0px 8px',textAlign: 'center',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>{row.effectiveDate || ''}</TableCell>
                           <TableCell onClick={() => { navigateToAction(row) }}
-                        style={{ height: '42px', textAlign: 'left', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>{row.event || ''}</TableCell>
+                        style={{ height: '24px', textAlign: 'left', fontWeight: '400', fontSize: '12px', lineHeight: '24px', margin: '0px', padding: '0px 8px',textAlign: 'left',borderRight: '1px solid rgba(240, 242, 244, 1)'}}>{row.event || ''}</TableCell>
                                            
                         
                       <TableCell onClick={() => { navigateToAction(row) }}
-                        style={{ fontWeight: '500', fontSize: '14px', lineHeight: '24px', textAlign: 'left' }}>{row.dealFamily} </TableCell>
+                        style={{ fontWeight: '400', fontSize: '12px', lineHeight: '24px', textAlign: 'left' , margin: '0px', padding: '0px 8px',textAlign: 'left',borderRight: '1px solid rgba(240, 242, 244, 1)'}}>{row.dealFamily} </TableCell>
 
   
                       <TableCell onClick={() => { navigateToAction(row) }}
                         style={{
-                          textAlign: 'right', fontWeight: '500', fontSize: '14px',
-                          lineHeight: '24px', paddingRight: '22px'
+                          textAlign: 'right', fontWeight: '400', fontSize: '12px',
+                          lineHeight: '24px', paddingRight: '22px', margin: '0px', padding: '0px 8px' ,textAlign: 'center',borderRight: '1px solid rgba(240, 242, 244, 1)'
                         }}>
                         {row.amount
                             || ''
                         }
                       </TableCell>
-                      <TableCell style={{ textAlign: 'center', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }} onClick={() => { navigateToAction(row) }}>
+                      <TableCell style={{ textAlign: 'center', fontWeight: '400', fontSize: '12px', lineHeight: '24px', margin: '0px', padding: '0px 8px',textAlign: 'center',borderRight: '1px solid rgba(240, 242, 244, 1)' }} onClick={() => { navigateToAction(row) }}>
                         {row.batchStatus|| ''}</TableCell>
-                      <TableCell style={{ textAlign: 'center', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }} onClick={() => { navigateToAction(row) }}>
+                      <TableCell style={{ textAlign: 'center', fontWeight: '400', fontSize: '12px', lineHeight: '24px', margin: '0px', padding: '0px 8px',textAlign: 'center',borderRight: '1px solid rgba(240, 242, 244, 1)'  }} onClick={() => { navigateToAction(row) }}>
                         {row.wfeStatus|| ''}</TableCell>
                      
                       <TableCell className="actions-menu-main" tabIndex={-1} >
@@ -213,7 +224,7 @@ const FundTransactionList = (props) => {
                                 placement="bottom">
                                 <button id={'viewInputWfeBtn-'+index} className="options-button me-2">
                                   <Link to={"/actionpage/viewInputGlobal"} state={{ path: 'dashboard', event: row.event, active: 'viewInput' }}
-                                    style={{ fontWeight: '500', color: '#344050' }}>
+                                    style={{ fontWeight: '400', color: '#344050' }}>
                                     <img src={viewInputIcon} alt="viewInput" />
                                   </Link>
                                 </button>
@@ -232,7 +243,7 @@ const FundTransactionList = (props) => {
                                     path: 'dashboard', event: row.event,
                                     active: 'setOptions'
                                   }}
-                                    style={{ fontWeight: '500', color: '#344050' }}>
+                                    style={{ fontWeight: '400', color: '#344050' }}>
                                     <img src={GearHollowIcon} alt="setOptions" />
                                   </Link>
                                 </button>
@@ -248,7 +259,7 @@ const FundTransactionList = (props) => {
                                 placement="bottom">
                                 <button id={'runWaterfallWfeBtn-'+index} className="options-button me-2">
                                   <Link to={"/actionpage/runWaterfall"} state={{ path: 'dashboard', event: row.event, active: 'runWaterfall' }}
-                                    style={{ fontWeight: '500', color: '#344050' }}>
+                                    style={{ fontWeight: '400', color: '#344050' }}>
                                     <img src={greenrightarrow} alt="runWaterfall" />
                                   </Link>
 
@@ -265,7 +276,7 @@ const FundTransactionList = (props) => {
                                 placement="bottom">
                                 <button id={'viewOutputWfeBtn-'+index} className="options-button me-2">
                                   <Link to={"/actionpage/viewOutputGlobal"} state={{ path: 'dashboard', event: row.event, active: 'viewOutput' }}
-                                    style={{ fontWeight: '500', color: '#344050' }}>
+                                    style={{ fontWeight: '400', color: '#344050' }}>
                                     <img src={viewOutputIcon} alt="viewOutput" />
                                   </Link>
                                 </button>
@@ -287,7 +298,7 @@ const FundTransactionList = (props) => {
                                     row: row,
                                     event: row.event, active: 'approval'
                                   }}
-                                    style={{ fontWeight: '500', color: '#344050' }}>
+                                    style={{ fontWeight: '400', color: '#344050' }}>
                                     <img src={greenTickIcon} alt="approval" />
                                   </Link>
                                 </button>

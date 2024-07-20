@@ -27,7 +27,7 @@ tr {
 }
 
 .caption {
-  font-family: 'Inter';
+  font-family: 'Helvetica';
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -37,7 +37,7 @@ tr {
 }
 
 th {
-  font-family: 'Roboto';
+  font-family: 'Helvetica';
   font-style: normal;
   font-weight: 1500;
   font-size: 14px;
@@ -45,7 +45,7 @@ th {
 }
 
 td {
-  font-family: 'Roboto';
+  font-family: 'Helvetica';
   font-style: normal;
   font-weight: 1000;
   font-size: 14px;
@@ -55,6 +55,7 @@ td {
 td.actions-menu-main {
   position: relative;
   text-align: left;
+  padding: 0px !important;
 }
 
 td.actions-menu-main:hover .actions-menu {
@@ -98,7 +99,8 @@ td.actions-menu-main .actions-menu a {
 }
 
 td.actions-menu-main .actions-menu>div {
-  padding: 0.5rem 0.5rem;
+  /* padding: 0.5rem 0.5rem; */
+  padding: 0px;
 }
 
 td.actions-menu-main .actions-menu>div:hover {
@@ -169,6 +171,13 @@ td.actions-menu-main .actions-menu>div span {
   /* background: #FFFFFF; */
 }
 
+.bell-notification{
+  background: rgba(255, 255, 255, 1);
+  border-radius: 16px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  font-size: 0px !important;
+}
+
 .header-user {
   position: absolute;
   left: 80.14%;
@@ -176,14 +185,52 @@ td.actions-menu-main .actions-menu>div span {
   top: 21.88%;
   bottom: 15.62%;
 
-  background: #F7F8F9;
-  border-radius: 5px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 16px;
 }
 
-.header-user:hover,
-.header-user:hover .header-user-initial {
+.header-user-menu {
+  width: auto; 
+  height: 32px; 
+  position: static;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 4px;
+  gap:8px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.header-user-menu:hover,
+.header-user-menu:hover .header-user-name
+ {
   color: white;
+  fill: white;
   background-color: rgb(116, 193, 98);
+}
+
+.header-user-menu:hover{
+  background: rgb(116, 193, 98);
+  svg {
+    path {
+      fill: white;
+    }  
+  }
+} 
+.bell-notification:hover {
+  background: rgb(116, 193, 98);
+  svg {
+    path {
+      stroke:white;
+    }  
+  }
+}
+.header-logout-icon:hover {
+  svg {
+    path {
+      stroke:rgb(116, 193, 98);
+    }  
+  }
 }
 
 .header-user-initial {
@@ -193,7 +240,7 @@ td.actions-menu-main .actions-menu>div span {
   top: 29.06%;
   bottom: 32.81%;
 
-  font-family: 'Inter';
+  font-family: 'Helvetica';
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
@@ -213,10 +260,10 @@ td.actions-menu-main .actions-menu>div span {
   top: 39.06%;
   bottom: 32.81%;
 
-  font-family: 'Inter';
+  font-family: 'Helvetica';
   font-style: normal;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 12px;
   line-height: 18px;
 
   color: #000000;
@@ -247,7 +294,7 @@ height: 18px; */
   right: 50px;
   bottom: 15px;
 
-  font-family: Roboto;
+  font-family: 'Helvetica';
   /*Inter;*/
   font-style: normal;
   font-weight: 500;
@@ -259,7 +306,7 @@ height: 18px; */
 }
 
 .fundTable .table .MuiTableHead-root tr.MuiTableRow-head th.MuiTableCell-head {
-  background-color: #E9F2FF;
+  background: rgba(238, 243, 249, 1);
 }
 
 .fundTable .table .MuiTableBody-root tr.MuiTableRow-root td.MuiTableCell-root i.fa-star {
@@ -301,7 +348,7 @@ height: 18px; */
 }
 
 div.footer {
-  font-family: Roboto;
+  font-family: 'Helvetica';
   font-size: 12px;
   font-weight: 400;
   line-height: 14px;
@@ -322,7 +369,7 @@ div.footer {
 .login-info-text {
   text-align: center;
   margin: 100px auto;
-  font-family: Roboto;
+  font-family: 'Helvetica';
 
   width: 400px;
   height: 110px;
@@ -357,7 +404,7 @@ height: 72px; */
   width: 272px;
   height: 56px;
   padding-top: 5px;
-  font-family: 'Roboto';
+  font-family: 'Helvetica';
   font-style: normal;
   font-weight: 900;
   font-size: 14px;
@@ -373,7 +420,7 @@ height: 72px; */
 
   margin-left: 10px;
 
-  font-family: 'Roboto';
+  font-family: 'Helvetica';
   font-style: normal;
   font-weight: 900;
   font-size: 14px;
@@ -396,7 +443,7 @@ border-radius: 12px; */
   bottom: 0px;
   border: none;
 
-  font-family: 'Roboto';
+  font-family: 'Helvetica';
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -444,7 +491,7 @@ li.event-hover-li:hover {
 }
 
 .event-menu-heading {
-  font-family: 'Roboto';
+  font-family: 'Helvetica';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -483,7 +530,7 @@ li.event-hover-li:hover {
   padding-top: 16px;
   width: 310px;
   height: 56px;
-  font-family: 'Roboto';
+  font-family: 'Helvetica';
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -497,7 +544,7 @@ li.event-hover-li:hover {
 
   padding-left: 20px;
 
-  font-family: 'Roboto';
+  font-family: 'Helvetica';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -554,10 +601,32 @@ select.event-dropdown {
   color: rgb(116, 193, 98);
 }
 
+a.nav-link .notifnComp .svg-icon,
+a.nav-link .gearComp .svg-icon,
+a.nav-link .logoutComp .svg-icon {
+  fill: #5E5E5E;
+}
+
 a.nav-link:hover .notifnComp .svg-icon,
 a.nav-link:hover .gearComp .svg-icon,
 a.nav-link:hover .logoutComp .svg-icon {
   fill: rgb(116, 193, 98);
+}
+
+
+.logoutComp{
+width: 14px;
+height: 18px;
+}
+
+.avatarComp{
+  width: 26px;
+  height: 26px;
+}
+
+.chevronDownComp{
+  width: 18px;
+  height: 18px;
 }
 
 .fund-setup-btn.active .svg-icon {
@@ -580,7 +649,7 @@ a.nav-link:hover .logoutComp .svg-icon {
   height: 40px;
   color: #22294B;
   fill: #22294B;
-  font-family: 'Roboto';
+  font-family: 'Helvetica';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -602,7 +671,7 @@ a.nav-link:hover .logoutComp .svg-icon {
   height: 40px;
   color: #22294B;
   fill: #22294B;
-  font-family: 'Roboto';
+  font-family: 'Helvetica';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -713,6 +782,7 @@ a.nav-link:hover .logoutComp .svg-icon {
   background-color: #FFFFFF;
   width: 94%;
   margin: auto;
+  padding: 0px !important;
 }
 .header-container.container-fluid {
   margin: 0px;
@@ -747,8 +817,7 @@ a.nav-link:hover .logoutComp .svg-icon {
 }
 .ThoughtFocus-header-nav-bar .header-menu2 {
   align-items: center;
-  justify-content: space-between;
-  width: 25%;
+  gap:16px;
 }
 
 .navbar-nav a span:hover .menu-icon .svg-icon,
@@ -825,7 +894,7 @@ a.nav-link:hover .logoutComp .svg-icon {
   margin-top: 15px;
 }
 .set-options-summ-container table.transaction-table tr:first-child th {
-  font-family: Roboto; 
+  font-family: 'Helvetica'; 
   font-style: normal; 
   font-weight: 700; 
   font-size: 16px; 
@@ -1482,4 +1551,69 @@ a.nav-link:hover .logoutComp .svg-icon {
     margin-left: 15px;
     color: #FFFFFF;
   }
+}
+.sideMenuContainer{
+  min-width: 57px;
+  position: relative;
+  background-color: rgb(116, 193, 98);
+  display: flex;
+  justify-content: center;
+}
+.menuContainer{
+  display: flex;
+  flex-direction: column;
+  gap:16px;
+  padding-top:24px;
+  position: fixed;
+  padding-left: 0px;
+  align-items: center;
+}
+.subMenuContainer{
+  display: flex;
+  flex-direction: column;
+  gap:16px;
+  padding-top:24px;
+  position: fixed;
+  padding-left: 0px;
+}
+
+.menuHover{
+  list-style-type: none;
+  position: relative;
+  overflow: hidden;
+  height: 44px;
+  min-width: 57px;
+  max-width: 57px;
+}
+.menuIcon{
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  stroke: none;
+  transition: stroke 0.5s ease;
+}
+
+.menuHover:hover .menuIcon{
+  stroke: rgba(116, 193, 98, 1);
+  fill:rgba(116, 193, 98, 1);
+}
+
+.menuHover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -48px;
+  width: 48px;
+  height: 100%;
+  background-color: rgba(214, 246, 206, 1);
+  border-radius: 16px 0 0 16px;
+  transition: right 0.5s ease;
+}
+
+.menuHover:hover:before {
+  right: 0;
 }

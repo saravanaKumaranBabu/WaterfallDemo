@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-import CoinsIcon from "../../main/Images/Coins.svg";
 
-import ExportToExcelComb from "../../main/Images/exportExcelFileIcon.svg";
 
 // import Frame57409 from "../../main/Images/Frame 57409.svg";
 // import FrameFeePayingLP from "../../main/Images/Frame 57590.svg";
@@ -10,16 +8,14 @@ import ExportToExcelComb from "../../main/Images/exportExcelFileIcon.svg";
 // import GP from "../../main/Images/GP.svg";
 // import DownwardDistribution from "../../main/Images/DownwardDistribution.svg";
 // import ThreeDots from "../../main/Images/threeDots.svg";
-import PopupDrilldown from "../Modal/PopupDrilldown";
-import DrilldownMenu from "../DrilldownMenu";
+import NumberFormat from "react-number-format";
 import { useLocation } from 'react-router-dom';
 import { useFetchDistOutputGlobal } from "../../Hooks/FundHooks";
-import NumberFormat from "react-number-format";
 
 
 import {
-  Paper, Table, TableBody, TableCell, TableContainer,
-  TableHead, TableRow,
+    Paper, Table, TableBody, TableCell, TableContainer,
+    TableHead, TableRow,
 } from '@mui/material';
 
 
@@ -55,280 +51,280 @@ const ViewOutputGlobal = (props: any) => {
                             <TableRow >
                             <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'left',
-                                        width: '101px'
+                                        width: '59px',
                                     }}
-                                >Investor Id</TableCell> 
+                                >FM Inv-ID</TableCell> 
                                 <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'left',
-                                        width: '101px'
+                                        width: '66px'
                                     }}
-                                >Investor</TableCell>
+                                >TF Investor</TableCell>
                                 <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'right',
-                                        width: '101px'
+                                        width: '90px'
                                     }}
                                 >Gross Proceeds</TableCell>                                   
                                 <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'right',
-                                        width: '101px'
+                                        width: '90px'
                                     }}
-                                >Withholding For Expenses</TableCell>  
+                                >Withholding Expenses</TableCell>  
                                    <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'right',
-                                        width: '101px'
+                                        width: '90px'
                                     }}
                                 >Return of Capital</TableCell>  
                                   <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'right',
-                                        width: '101px'
+                                        width: '90px'
                                     }}
                                 >Gross Gain</TableCell>  
                                 <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'right',
-                                        width: '101px'
+                                        width: '90px'
                                     }}
                                 >Return of Expenses</TableCell>   
                                 <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'right',
-                                        width: '101px'
+                                        width: '90px'
                                     }}
                                 >Netting</TableCell>     
 
                                    <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'right',
-                                        width: '101px'
+                                        width: '90px'
                                     }}
                                 >Cumulative Gain Subject To Carry</TableCell>        
                                 
                                 <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'right',
-                                        width: '101px'
+                                        width: '90px'
                                     }}
                                 >Prefered Return Target</TableCell>    
                                                                 
                                    <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'right',
-                                        width: '101px'
+                                        width: '90px'
                                     }}
                                 >Prefered Return Paid</TableCell>    
 
-<TableCell
+                                    <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'right',
-                                        width: '101px'
+                                        width: '90px'
                                     }}
                                 >Addl.Gain Reqd. for Catch-up</TableCell>    
                                 <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'right',
-                                        width: '101px'
+                                        width: '90px'
                                     }}
                                 >0% to LP</TableCell>  
                                                                <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'right',
-                                        width: '101px'
+                                        width: '90px'
                                     }}
                                 >100% to GP</TableCell> 
                                 <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'right',
-                                        width: '101px'
+                                        width: '90px'
                                     }}
                                 >80% to LP</TableCell> 
                                 <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'right',
-                                        width: '101px'
+                                        width: '90px'
                                     }}
                                 >20% to GP</TableCell> 
                                                                 <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'right',
-                                        width: '101px'
+                                        width: '90px'
                                     }}
                                 >Cum.GpCarry</TableCell> 
                                                                 <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'right',
-                                        width: '101px'
+                                        width: '90px'
                                     }}
                                 >LTD Carry Paid</TableCell> 
 
                                   <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'right',
-                                        width: '101px'
+                                        width: '90px'
                                     }}
                                 >Eligible Carry</TableCell> 
                                   <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'right',
-                                        width: '101px'
+                                        width: '90px'
                                     }}
                                 >Current Carry</TableCell> 
                                                                   <TableCell
                                     style={{
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Helvetica',
                                         fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        color: '#08121B',
-                                        borderRight: '1px solid #FFFFFF',
+                                        fontWeight: '700',
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        color:'#444446',
+                                        borderRight: '1px solid rgba(240, 242, 244, 1)',
                                         textAlign: 'right',
-                                        width: '101px'
+                                        width: '90px'
                                     }}
                                 >Distribution to LP</TableCell> 
                             </TableRow>
@@ -343,120 +339,120 @@ const ViewOutputGlobal = (props: any) => {
                   key={'dashbd-'+index+'-'+row.tenaskaSaleWaterfallOutputId}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }} >      
                   <TableCell 
-                    style={{ fontWeight: '500', fontSize: '14px', lineHeight: '24px', textAlign: 'left' }}>{row.fmInvId} </TableCell>
-                  <TableCell style={{ textAlign: 'left', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                    style={{ fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)', textAlign: 'left' }}>{row.fmInvId} </TableCell>
+                  <TableCell style={{ textAlign: 'left', fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>
                     {row.tfInvestor|| ''}</TableCell>
 
-                  <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                  <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>
                   <NumberFormat
                                                     value={row.grossProceeds}
                                                     displayType={"text"}
                                                     thousandSeparator={true}
                                                     prefix={"$"} /></TableCell>
-                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>
                     <NumberFormat
                                                     value={row.withholdingForExpenses}
                                                     displayType={"text"}
                                                     thousandSeparator={true}
                                                     prefix={"$"} /></TableCell>
-                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>
                     <NumberFormat
                                                     value={row.returnOfCapital}
                                                     displayType={"text"}
                                                     thousandSeparator={true}
                                                     prefix={"$"} /></TableCell>
-                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>
                     <NumberFormat
                                                     value={row.grossGain}
                                                     displayType={"text"}
                                                     thousandSeparator={true}
                                                     prefix={"$"} /></TableCell>
-                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>
                     <NumberFormat
                                                     value={row.returnOfExpenses}
                                                     displayType={"text"}
                                                     thousandSeparator={true}
                                                     prefix={"$"} /></TableCell> 
-                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>
                     <NumberFormat
                                                     value={row.netting}
                                                     displayType={"text"}
                                                     thousandSeparator={true}
                                                     prefix={"$"} /></TableCell>     
-                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>
                     <NumberFormat
                                                     value={row.cumGainSubjToCarry}
                                                     displayType={"text"}
                                                     thousandSeparator={true}
                                                     prefix={"$"} /></TableCell>    
-                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>
                     <NumberFormat
                                                     value={row.prefTarget}
                                                     displayType={"text"}
                                                     thousandSeparator={true}
                                                     prefix={"$"} /></TableCell>  
-                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>
                     <NumberFormat
                                                     value={row.prefPaid}
                                                     displayType={"text"}
                                                     thousandSeparator={true}
                                                     prefix={"$"} /></TableCell>   
-                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>
                     <NumberFormat
                                                     value={row.addlGainReqdForCatchUp}
                                                     displayType={"text"}
                                                     thousandSeparator={true}
                                                     prefix={"$"} /></TableCell>   
-                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>
                     <NumberFormat
                                                     value={row._0ToLp}
                                                     displayType={"text"}
                                                     thousandSeparator={true}
                                                     prefix={"$"} /></TableCell>   
-                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>
                     <NumberFormat
                                                     value={row._100ToGp}
                                                     displayType={"text"}
                                                     thousandSeparator={true}
                                                     prefix={"$"} /></TableCell>                                                       
-                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>
                     <NumberFormat
                                                     value={row._80ToLp}
                                                     displayType={"text"}
                                                     thousandSeparator={true}
                                                     prefix={"$"} /></TableCell> 
-                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>
                     <NumberFormat
                                                     value={row._20ToGp}
                                                     displayType={"text"}
                                                     thousandSeparator={true}
                                                     prefix={"$"} /></TableCell> 
-                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>
                     <NumberFormat
                                                     value={row.cumGpCarry}
                                                     displayType={"text"}
                                                     thousandSeparator={true}
                                                     prefix={"$"} /></TableCell> 
-                   <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                   <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>
                     <NumberFormat
                                                     value={row.ltdCarryPaid}
                                                     displayType={"text"}
                                                     thousandSeparator={true}
                                                     prefix={"$"} /></TableCell> 
 
-                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>
                     <NumberFormat
                                                     value={row.eligibleCarry}
                                                     displayType={"text"}
                                                     thousandSeparator={true}
                                                     prefix={"$"} /></TableCell> 
-                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>
                     <NumberFormat
                                                     value={row.currentCarry}
                                                     displayType={"text"}
                                                     thousandSeparator={true}
                                                     prefix={"$"} /></TableCell> 
-                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '14px', lineHeight: '24px' }}>
+                    <TableCell style={{ textAlign: 'right', fontWeight: '500', fontSize: '12px', lineHeight: '24px', padding: '0px 8px', margin:'0px',borderRight: '1px solid rgba(240, 242, 244, 1)' }}>
                     <NumberFormat
                                                     value={row.distributionToLp}
                                                     displayType={"text"}
